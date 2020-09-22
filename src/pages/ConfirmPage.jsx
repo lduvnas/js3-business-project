@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import EmailImage from "../email-deliverability-gnome.svg";
+import EmailImage from "../paper-plane.png";
 
 const Div = styled.div`
   display: flex;
