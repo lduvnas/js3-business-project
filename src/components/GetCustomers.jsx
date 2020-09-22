@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+/* import slugify from "react-slugify"; */
 import UserKit from "../data/UserKit";
 import styled from "styled-components";
 
@@ -18,10 +20,6 @@ export default function GetCustomers() {
   const userKit = new UserKit();
   const [customerList, setCustomerList] = useState([]);
 
-  /*   useEffect(() => {
-      getCustomerList();
-    }, []);
-   */
   function getCustomerList() {
     userKit
       .getCustomerList()
@@ -40,7 +38,9 @@ export default function GetCustomers() {
         customerList.map(customerItem => {
           return (
             /*   <div key={customerItem.id}> */
-            <p>{customerItem.name}</p>
+            <Link to={`/customers/${customerItem.name}`}>
+              {customerItem.name}
+            </Link>
             /*  </div> */
           );
         })}

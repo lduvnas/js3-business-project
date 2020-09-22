@@ -6,6 +6,7 @@ import RegisterPage from "./pages/RegisterPage";
 import styled from "styled-components";
 import "./App.css";
 import ConfirmPage from "./pages/ConfirmPage";
+import CustomerDetailPage from "./pages/CustomerDetailPage";
 
 const Title = styled.h1`
   font-size: 2.5em;
@@ -17,6 +18,9 @@ function App() {
     <div>
       <Title>Business Project</Title>
       <Switch>
+        <Route path="/customers/:customer">
+          <CustomerDetailPage />
+        </Route>
         <Route path="/home">
           <HomePage />
         </Route>
