@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserKit from "../data/UserKit";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import Button from "../components/Button";
 
 export default function CustomerDetailPage(props) {
@@ -33,6 +33,7 @@ export default function CustomerDetailPage(props) {
 
   return (
     <div>
+      <Link to={`/home`}>Back to home page</Link>
       <Button onClick={deleteCustomer} title="Delete customer" />
       <h2>Customer Detail Page</h2>
       <p>Name: {customerData.name}</p>
