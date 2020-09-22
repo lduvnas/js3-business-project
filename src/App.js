@@ -18,9 +18,13 @@ function App() {
     <div>
       <Title>Business Project</Title>
       <Switch>
-        <Route path="/customers/:customer">
-          <CustomerDetailPage />
-        </Route>
+        <Route
+          path="/customers/:customer"
+          render={props => {
+            return <CustomerDetailPage {...props} />;
+          }}
+        ></Route>
+
         <Route path="/home">
           <HomePage />
         </Route>
