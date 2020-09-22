@@ -21,12 +21,9 @@ export default function ActiveUser() {
 
   return (
     <div>
-      <p>User:</p>
+      <h5>User:</h5>
+      <p>{user.firstName + " " + user.lastName}</p>
       <p>{user.email}</p>
-      <p>
-        {user.firstName}
-        {user.lastName}
-      </p>
     </div>
   );
 }

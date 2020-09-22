@@ -24,8 +24,9 @@ export default function HomePage() {
   return (
     <Div>
       <h2>Home</h2>
-      <ActiveUser />
+
       <Container>
+        <ActiveUser />
         <CustomerList />
 
         <CreateCustomerForm />
