@@ -4,7 +4,7 @@ import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
 import styled from "styled-components";
-import "./App.css";
+
 import ConfirmPage from "./pages/ConfirmPage";
 import CustomerDetailPage from "./pages/CustomerDetailPage";
 import { CustomerListContext } from "./contexts/CustomerListContext";

@@ -4,10 +4,11 @@ export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
- 
+
 }
 body {
   background: whitesmoke;
+  color: #555;
 }
 h3 {
  margin-top:2em;
