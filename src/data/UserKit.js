@@ -45,6 +45,14 @@ export default class {
     });
   }
 
+  async getUser() {
+    const url = `${ROOT_URL}api/v1/me/`;
+
+    return fetch(url, {
+      headers: this.getPrivateHeaders()
+    });
+  }
+
   async getCustomerList() {
     const url = `${ROOT_URL}api/v1/customers`;
 
@@ -54,7 +62,6 @@ export default class {
   }
 
   async createCustomar(
-    id,
     name,
     organisationNr,
     vatNr,
@@ -66,7 +73,6 @@ export default class {
   ) {
     const url = `${ROOT_URL}api/v1/customers`;
     const payload = {
-      id,
       name,
       organisationNr,
       vatNr,

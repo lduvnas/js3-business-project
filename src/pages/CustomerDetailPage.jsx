@@ -3,8 +3,7 @@ import UserKit from "../data/UserKit";
 
 export default function CustomerDetailPage(props) {
   let [customerData, setCustomerData] = useState({});
-  const customerId = props.match.params.id;
-  console.log(customerId);
+  /*   const customerId = props.match.params.id; */
 
   const userKit = new UserKit();
 
@@ -13,8 +12,6 @@ export default function CustomerDetailPage(props) {
       .getCustomerList()
       .then(res => res.json())
       .then(data => {
-        console.log(data.results);
-
         setCustomerData(data.results[0]);
       });
   }
