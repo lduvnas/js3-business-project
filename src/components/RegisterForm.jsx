@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserKit from "../data/UserKit";
-import styled from "styled-components";
 import Button from "./Button";
-
-const Container = styled.div`
-  width: 50%;
-  background-color: white;
-  padding: 3rem;
-  box-shadow: 0 1px 15px rgba(113, 113, 113, 0.06),
-    0 5px 12px rgba(211, 211, 211, 0.08);
-  border-radius: 5px;
-`;
 
 export default function RegisterForm() {
   const [firstName, setFirstName] = useState("");
@@ -57,7 +47,7 @@ export default function RegisterForm() {
     ["Organistion Kind (0,1,2)", organisationKind, setOrganisationKind]
   ];
   return (
-    <Container>
+    <div className="container">
       <h2>Register</h2>
       <p>Enter details to register</p>
 
@@ -68,6 +58,6 @@ export default function RegisterForm() {
       <p>
         Already have an account? Press <Link to={`/login`}>here</Link>
       </p>
-    </Container>
+    </div>
   );
 }

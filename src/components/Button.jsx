@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const PrimaryButton = styled.button`
-  width: 100%;
+  width: 200px;
   padding: 12px 20px;
   margin: 8px 0;
   border-radius: 5px;

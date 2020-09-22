@@ -1,27 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserKit from "../data/UserKit";
-import styled from "styled-components";
 import Button from "../components/Button";
-
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const Container = styled.div`
-  width: 50%;
-  background-color: white;
-  padding: 3rem;
-  box-shadow: 0 1px 15px rgba(113, 113, 113, 0.06),
-    0 5px 12px rgba(211, 211, 211, 0.08);
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
 
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = useState("");
@@ -60,14 +40,14 @@ export default function LoginPage() {
   }
 
   return (
-    <Div>
+    <div>
       {uid && token ? (
-        <Container>
+        <div className="container">
           <h2>Active Account</h2>
           <Button onClick={handleActivateUser} title="Activate User" />
-        </Container>
+        </div>
       ) : (
-        <Container>
+        <div className="container">
           <h2>Login</h2>
           <input
             placeholder="Email"
@@ -80,8 +60,8 @@ export default function LoginPage() {
             onChange={e => setLoginPassword(e.target.value)}
           />
           <Button onClick={handleLogin} title="Login" />
-        </Container>
+        </div>
       )}
-    </Div>
+    </div>
   );
 }

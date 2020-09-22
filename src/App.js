@@ -18,7 +18,7 @@ const Title = styled.h1`
 function App() {
   const [customerList, setCustomerList] = useState(null);
   return (
-    <div>
+    <div className="App">
       <GlobalStyles></GlobalStyles>
       <Title>Business Project</Title>
       <CustomerListContext.Provider value={{ customerList, setCustomerList }}>

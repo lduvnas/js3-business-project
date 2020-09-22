@@ -4,7 +4,7 @@ import UserKit from "../data/UserKit";
 import { CustomerListContext } from "../contexts/CustomerListContext";
 import styled from "styled-components";
 
-const Div = styled.div`
+const CustomerGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
@@ -33,7 +33,7 @@ export default function GetCustomers() {
     <div>
       <h3>Your Customers</h3>
 
-      <Div>
+      <CustomerGrid>
         {customerList &&
           customerList.map(customer => {
             const id = customer.id;
@@ -46,7 +46,7 @@ export default function GetCustomers() {
               </div>
             );
           })}
-      </Div>
+      </CustomerGrid>
     </div>
   );
 }
