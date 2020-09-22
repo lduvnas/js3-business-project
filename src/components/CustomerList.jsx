@@ -33,6 +33,8 @@ export default function GetCustomers() {
             <div key={customerItem.id}>
               <p>{customerItem.id}</p>
               <Link to={`/customers/${slug}`}>{customerItem.name}</Link>
+              <p>{customerItem.organisationNr}</p>
+              <p>{customerItem.reference}</p>
             </div>
           );
         })}

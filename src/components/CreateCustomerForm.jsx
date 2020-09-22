@@ -73,7 +73,7 @@ export default function CreateCustomerForm() {
   ];
   return (
     <div>
-      <h2>Create A New Costumer</h2>
+      <h3>Create A New Costumer</h3>
 
       {inputObjects.map((inputItem, index) => {
         return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);

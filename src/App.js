@@ -7,6 +7,7 @@ import styled from "styled-components";
 import "./App.css";
 import ConfirmPage from "./pages/ConfirmPage";
 import CustomerDetailPage from "./pages/CustomerDetailPage";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 const Title = styled.h1`
   font-size: 2.5em;
@@ -16,6 +17,7 @@ const Title = styled.h1`
 function App() {
   return (
     <div>
+      <GlobalStyles></GlobalStyles>
       <Title>Business Project</Title>
       <Switch>
         <Route path="/customers/:id" component={CustomerDetailPage} />

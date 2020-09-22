@@ -4,16 +4,22 @@ export const GlobalStyles = createGlobalStyle`
 * {
   box-sizing: border-box;
   margin: 0;
-  font-family: 'Arial', sans-serif;
+ 
 }
 body {
   background: whitesmoke;
 }
-h1 {
-  padding: 1em 0;
-  font-size: 2rem;
-  color: e1;
+h3 {
+ margin-top:2em;
 }
 
+p {
+  font-size:0.7em;
+}
 
+a{
+  font-size:0.7em;
+  text-decoration: none;
+  color: #67a4d9;
+}
 `;
