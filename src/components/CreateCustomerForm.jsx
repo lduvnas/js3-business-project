@@ -26,7 +26,7 @@ const Button = styled.button`
 `;
 
 export default function CreateCustomerForm() {
-  const [name, setname] = useState("");
+  const [name, setName] = useState("");
   const [organisationNr, setOrganisationNr] = useState("");
   const [vatNr, setVatNr] = useState("");
   const [reference, setReference] = useState("");
@@ -62,7 +62,7 @@ export default function CreateCustomerForm() {
     );
   }
   const inputObjects = [
-    ["name", name, setname],
+    ["name", name, setName],
     ["organisationNr", organisationNr, setOrganisationNr],
     ["vatNr", vatNr, setVatNr],
     ["reference", reference, setReference],
