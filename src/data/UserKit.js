@@ -47,7 +47,6 @@ export default class {
 
   async getCustomerList() {
     const url = `${ROOT_URL}api/v1/customers`;
-    console.log(url);
 
     return fetch(url, {
       headers: this.getPrivateHeaders()
@@ -55,6 +54,7 @@ export default class {
   }
 
   async createCustomar(
+    id,
     name,
     organisationNr,
     vatNr,
@@ -66,6 +66,7 @@ export default class {
   ) {
     const url = `${ROOT_URL}api/v1/customers`;
     const payload = {
+      id,
       name,
       organisationNr,
       vatNr,
@@ -75,7 +76,6 @@ export default class {
       email,
       phoneNumber
     };
-    console.log(payload);
 
     return fetch(url, {
       method: "POST",
