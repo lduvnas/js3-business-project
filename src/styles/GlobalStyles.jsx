@@ -22,4 +22,8 @@ a{
   text-decoration: none;
   color: #67a4d9;
 }
+
+img{
+  max-width: 50%;
+}
 `;
