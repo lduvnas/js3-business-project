@@ -56,11 +56,10 @@ export default class {
 
   async createCustomar(
     name,
-    /*    organisationNr,
+    organisationNr,
     vatNr,
     reference,
     paymentTerm,
-    kind, */
     website,
     email,
     phoneNumber
@@ -68,18 +67,19 @@ export default class {
     const url = `${ROOT_URL}api/v1/customers`;
     const payload = {
       name,
-      /*    organisationNr,
+      organisationNr,
       vatNr,
       reference,
       paymentTerm,
-      kind, */
       website,
       email,
       phoneNumber
     };
+    console.log(payload);
+
     return fetch(url, {
       method: "POST",
-      headers: this.getPublicHeaders(),
+      headers: this.getPrivateHeaders(),
       body: JSON.stringify(payload)
     });
   }

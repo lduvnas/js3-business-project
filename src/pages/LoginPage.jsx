@@ -54,7 +54,7 @@ export default function LoginPage() {
 
   const [uid, setUid] = useState(urlParameters.get("uid"));
   const [token, setToken] = useState(urlParameters.get("token"));
-  const [errorMsg, setErrorMsg] = useState("");
+  /*  const [errorMsg, setErrorMsg] = useState(""); */
 
   const userKit = new UserKit();
 

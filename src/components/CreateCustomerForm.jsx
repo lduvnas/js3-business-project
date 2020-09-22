@@ -27,11 +27,10 @@ const Button = styled.button`
 
 export default function CreateCustomerForm() {
   const [name, setname] = useState("");
-  /*   const [organisationNr, setOrganisationNr] = useState("");
+  const [organisationNr, setOrganisationNr] = useState("");
   const [vatNr, setVatNr] = useState("");
   const [reference, setReference] = useState("");
   const [paymentTerm, setPaymentTerm] = useState("");
-  const [kind, setKind] = useState(""); */
   const [website, setWebsite] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -41,11 +40,10 @@ export default function CreateCustomerForm() {
   function handleCreateCustomer() {
     userKit.createCustomar(
       name,
-      /*    organisationNr,
+      organisationNr,
       vatNr,
       reference,
       paymentTerm,
-      kind, */
       website,
       email,
       phoneNumber
@@ -65,18 +63,17 @@ export default function CreateCustomerForm() {
   }
   const inputObjects = [
     ["name", name, setname],
-    /*  ["organisationNr", organisationNr, setOrganisationNr],
+    ["organisationNr", organisationNr, setOrganisationNr],
     ["vatNr", vatNr, setVatNr],
     ["reference", reference, setReference],
     ["paymentTerm", paymentTerm, setPaymentTerm],
-    ["kind", kind, setKind], */
     ["website", website, setWebsite],
     ["Email", email, setEmail],
     ["Phone", phoneNumber, setPhoneNumber]
   ];
   return (
     <div>
-      <h2>Create Costumer</h2>
+      <h2>Create A New Costumer</h2>
 
       {inputObjects.map((inputItem, index) => {
         return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);

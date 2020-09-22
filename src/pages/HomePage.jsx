@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import UserKit from "../data/UserKit";
+import React from "react";
 import styled from "styled-components";
 import CreateCustomerForm from "../components/CreateCustomerForm";
+import GetCustomers from "../components/GetCustomers";
 
 const Div = styled.div`
   display: flex;
@@ -22,57 +22,13 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: none;
-  background-color: #67a4d9;
-  color: white;
-  &:hover {
-    background-color: #5885ac;
-  }
-`;
-
 export default function HomePage() {
-  const userKit = new UserKit();
-  const [customerList, setCustomerList] = useState(null);
-
-  useEffect(() => {
-    getCustomerList();
-  }, []);
-
-  function getCustomerList() {
-    userKit
-      .getCustomerList()
-      .then(res => res.json())
-      .then(data => {
-        setCustomerList(data.results);
-      });
-  }
-
   return (
     <Div>
       <h2>Home</h2>
       <Container>
+        <GetCustomers />
         <CreateCustomerForm />
-
-        <Button onClick={getCustomerList}>Get Customar</Button>
-
-        <h3>Customers</h3>
-        {customerList &&
-          customerList.map(eventItem => {
-            return (
-              <div key={eventItem.count}>
-                <p>{eventItem.name}</p>
-                <p>{eventItem.website}</p>
-                <p>{eventItem.email}</p>
-                <p>{eventItem.phoneNumber}</p>
-                <p></p>
-              </div>
-            );
-          })}
       </Container>
     </Div>
   );
