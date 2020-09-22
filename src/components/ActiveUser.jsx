@@ -1,0 +1,32 @@
+import React, { useState, useEffect } from "react";
+import UserKit from "../data/UserKit";
+
+export default function ActiveUser() {
+  const userKit = new UserKit();
+  const [user, setUser] = useState({});
+
+  function getActiveUser() {
+    userKit
+      .getUser()
+      .then(res => res.json())
+      .then(data => {
+        setUser(data);
+      });
+  }
+
+  useEffect(() => {
+    getActiveUser();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  return (
+    <div>
+      <p>User:</p>
+      <p>{user.email}</p>
+      <p>
+        {user.firstName}
+        {user.lastName}
+      </p>
+    </div>
+  );
+}

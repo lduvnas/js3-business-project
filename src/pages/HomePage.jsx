@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import CreateCustomerForm from "../components/CreateCustomerForm";
-import GetCustomers from "../components/GetCustomers";
+import CustomerList from "../components/CustomerList";
+import ActiveUser from "../components/ActiveUser";
 
 const Div = styled.div`
   display: flex;
@@ -26,8 +27,10 @@ export default function HomePage() {
   return (
     <Div>
       <h2>Home</h2>
+      <ActiveUser />
       <Container>
-        <GetCustomers />
+        <CustomerList />
+
         <CreateCustomerForm />
       </Container>
     </Div>
