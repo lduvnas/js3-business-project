@@ -1,18 +1,7 @@
 import React, { useState, useContext } from "react";
 import UserKit from "../data/UserKit";
-import styled from "styled-components";
 import { CustomerListContext } from "../contexts/CustomerListContext";
 import Button from "./Button";
-
-const Input = styled.input`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  background-color: #f1f1f1;
-  color: black;
-`;
 
 export default function CreateCustomerForm() {
   const [name, setName] = useState("");
@@ -59,7 +48,7 @@ export default function CreateCustomerForm() {
   function renderInput(index, placeholder, stateVarible, stateSetVarible) {
     return (
       <div key={index}>
-        <Input
+        <input
           placeholder={placeholder}
           value={stateVarible}
           onChange={e => stateSetVarible(e.target.value)}

@@ -23,16 +23,6 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const Input = styled.input`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  background-color: #f1f1f1;
-  color: black;
-`;
-
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -79,12 +69,12 @@ export default function LoginPage() {
       ) : (
         <Container>
           <h2>Login</h2>
-          <Input
+          <input
             placeholder="Email"
             value={loginEmail}
             onChange={e => setLoginEmail(e.target.value)}
           />
-          <Input
+          <input
             placeholder="Password"
             value={loginPassword}
             onChange={e => setLoginPassword(e.target.value)}

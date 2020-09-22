@@ -13,16 +13,6 @@ const Container = styled.div`
   border-radius: 5px;
 `;
 
-const Input = styled.input`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: none;
-  background-color: #f1f1f1;
-  color: black;
-`;
-
 export default function RegisterForm() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -50,7 +40,7 @@ export default function RegisterForm() {
   function renderInput(index, placeholder, stateVarible, stateSetVarible) {
     return (
       <div key={index}>
-        <Input
+        <input
           placeholder={placeholder}
           value={stateVarible}
           onChange={e => stateSetVarible(e.target.value)}

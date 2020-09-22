@@ -28,4 +28,14 @@ a{
 img{
   max-width: 50%;
 }
+
+input{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: #f1f1f1;
+  color: black;
+}
 `;
