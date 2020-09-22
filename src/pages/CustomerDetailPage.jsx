@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 export default function CustomerDetailPage(props) {
   let [customerData, setCustomerData] = useState({});
   const customerId = props.match.params.id;
-  console.log(customerId);
 
   const userKit = new UserKit();
   const history = useHistory();
@@ -25,7 +24,7 @@ export default function CustomerDetailPage(props) {
   }, []);
 
   function deleteCustomer() {
-    if (window.confirm("are you sure?")) {
+    if (window.confirm("Are you sure?")) {
       userKit.deleteCustomer(customerId);
       history.push("/home");
     }
