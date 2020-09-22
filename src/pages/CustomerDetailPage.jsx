@@ -21,6 +21,7 @@ export default function CustomerDetailPage(props) {
 
   useEffect(() => {
     getCustomer();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
