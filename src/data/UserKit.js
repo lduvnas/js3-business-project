@@ -61,6 +61,13 @@ export default class {
     });
   }
 
+  async getCustomer(id) {
+    const url = `${ROOT_URL}api/v1/customers/${id}/`;
+    return fetch(url, {
+      headers: this.getPrivateHeaders()
+    });
+  }
+
   async createCustomar(
     name,
     organisationNr,

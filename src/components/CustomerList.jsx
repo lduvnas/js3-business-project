@@ -38,16 +38,16 @@ export default function GetCustomers() {
 
       <Div>
         {customerList &&
-          customerList.map(customerItem => {
-            /*   const slug = slugify(customerItem.name, { lower: true }); */
+          customerList.map(customer => {
+            const id = customer.id;
+
+            /*   const slug = slugify(customer.name, { lower: true }); */
             return (
-              <div key={customerItem.id}>
-                <Link to={`/customers/${customerItem.id}`}>
-                  {customerItem.name}
-                </Link>
-                <p>{customerItem.organisationNr}</p>
-                <p>{customerItem.reference}</p>
-                <p>id: {customerItem.id}</p>
+              <div key={id}>
+                <Link to={`/customers/${id}`}>{customer.name}</Link>
+                <p>{customer.organisationNr}</p>
+                <p>{customer.reference}</p>
+                <p>id: {customer.id}</p>
               </div>
             );
           })}
