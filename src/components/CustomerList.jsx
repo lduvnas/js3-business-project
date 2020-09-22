@@ -1,6 +1,5 @@
 import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
-/* import slugify from "slugify"; */
 import UserKit from "../data/UserKit";
 import { CustomerListContext } from "../contexts/CustomerListContext";
 import styled from "styled-components";
@@ -34,15 +33,10 @@ export default function GetCustomers() {
     <div>
       <h3>Your Customers</h3>
 
-      {/*      <Button onClick={getCustomerList}>Get Customars</Button> */}
-      {/*     <p>You dont have any costumers yet</p> */}
-
       <Div>
         {customerList &&
           customerList.map(customer => {
             const id = customer.id;
-
-            /*   const slug = slugify(customer.name, { lower: true }); */
             return (
               <div key={id}>
                 <Link to={`/customers/${id}`}>{customer.name}</Link>

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserKit from "../data/UserKit";
 import styled from "styled-components";
+import Button from "./Button";
 
 const Container = styled.div`
   width: 50%;
@@ -20,19 +21,6 @@ const Input = styled.input`
   border: none;
   background-color: #f1f1f1;
   color: black;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: none;
-  background-color: #67a4d9;
-  color: white;
-  &:hover {
-    background-color: #5885ac;
-  }
 `;
 
 export default function RegisterForm() {
@@ -86,8 +74,7 @@ export default function RegisterForm() {
       {inputObjects.map((inputItem, index) => {
         return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);
       })}
-
-      <Button onClick={handleRegister}>Register</Button>
+      <Button onClick={handleRegister} title="Register" />
       <p>
         Already have an account? Press <Link to={`/login`}>here</Link>
       </p>

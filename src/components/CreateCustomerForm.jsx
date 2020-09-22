@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import UserKit from "../data/UserKit";
 import styled from "styled-components";
 import { CustomerListContext } from "../contexts/CustomerListContext";
+import Button from "./Button";
 
 const Input = styled.input`
   width: 100%;
@@ -11,19 +12,6 @@ const Input = styled.input`
   border: none;
   background-color: #f1f1f1;
   color: black;
-`;
-
-const Button = styled.button`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: none;
-  background-color: #67a4d9;
-  color: white;
-  &:hover {
-    background-color: #5885ac;
-  }
 `;
 
 export default function CreateCustomerForm() {
@@ -96,8 +84,7 @@ export default function CreateCustomerForm() {
       {inputObjects.map((inputItem, index) => {
         return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);
       })}
-
-      <Button onClick={handleCreateCustomer}>Create Customer</Button>
+      <Button onClick={handleCreateCustomer} title="Create Customer" />
     </div>
   );
 }

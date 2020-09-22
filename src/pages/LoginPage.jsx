@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserKit from "../data/UserKit";
 import styled from "styled-components";
+import Button from "../components/Button";
 
 const Div = styled.div`
   display: flex;
@@ -32,18 +33,6 @@ const Input = styled.input`
   color: black;
 `;
 
-const Button = styled.button`
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  border-radius: 5px;
-  border: none;
-  background-color: #67a4d9;
-  color: white;
-  &:hover {
-    background-color: #5885ac;
-  }
-`;
 export default function LoginPage() {
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
@@ -54,7 +43,6 @@ export default function LoginPage() {
 
   const [uid, setUid] = useState(urlParameters.get("uid"));
   const [token, setToken] = useState(urlParameters.get("token"));
-  /*  const [errorMsg, setErrorMsg] = useState(""); */
 
   const userKit = new UserKit();
 
@@ -86,7 +74,7 @@ export default function LoginPage() {
       {uid && token ? (
         <Container>
           <h2>Active Account</h2>
-          <Button onClick={handleActivateUser}>Activate User</Button>
+          <Button onClick={handleActivateUser} title="Activate User" />
         </Container>
       ) : (
         <Container>
@@ -101,7 +89,7 @@ export default function LoginPage() {
             value={loginPassword}
             onChange={e => setLoginPassword(e.target.value)}
           />
-          <Button onClick={handleLogin}>Login</Button>
+          <Button onClick={handleLogin} title="Login" />
         </Container>
       )}
     </Div>
