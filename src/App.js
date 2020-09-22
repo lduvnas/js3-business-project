@@ -25,18 +25,13 @@ function App() {
         <Switch>
           <Route path="/customers/:id" component={CustomerDetailPage} />
 
-          <Route path="/home">
-            <HomePage />
-          </Route>
-          <Route path="/login">
-            <LoginPage />
-          </Route>
-          <Route path="/confirm">
-            <ConfirmPage />
-          </Route>
-          <Route path="/">
-            <RegisterPage />
-          </Route>
+          <Route path="/home" component={HomePage} />
+
+          <Route path="/login" component={LoginPage} />
+
+          <Route path="/confirm" component={ConfirmPage} />
+
+          <Route path="/" component={RegisterPage} />
         </Switch>
       </CustomerListContext.Provider>
     </div>

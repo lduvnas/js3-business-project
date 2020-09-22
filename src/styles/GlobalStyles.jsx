@@ -10,6 +10,7 @@ body {
   background: whitesmoke;
   color: #555;
 }
+
 h3 {
  margin-top:2em;
 }
