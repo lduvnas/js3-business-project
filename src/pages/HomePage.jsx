@@ -6,8 +6,8 @@ import ActiveUser from "../components/ActiveUser";
 export default function HomePage() {
   return (
     <div>
+      <ActiveUser />
       <div className="container">
-        <ActiveUser />
         <CustomerList />
 
         <CreateCustomerForm />

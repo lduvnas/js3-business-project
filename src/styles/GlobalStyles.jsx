@@ -12,8 +12,8 @@ body {
 
 }
 
-h3 {
- margin-top:2em;
+h3 ,h2, h6{
+ margin-top:1.5em;
 }
 
 p {
@@ -32,7 +32,7 @@ img{
 
 input{
   width: 100%;
-  padding: 12px 20px;
+  padding: 11px 15px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
