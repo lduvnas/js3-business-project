@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserKit from "../data/UserKit";
+import { useHistory } from "react-router-dom";
 
 export default function CustomerDetailPage(props) {
   let [customerData, setCustomerData] = useState({});
@@ -7,6 +8,7 @@ export default function CustomerDetailPage(props) {
   console.log(customerId);
 
   const userKit = new UserKit();
+  const history = useHistory();
 
   function fetchCustomer() {
     userKit
@@ -22,8 +24,16 @@ export default function CustomerDetailPage(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  function deleteCustomer() {
+    if (window.confirm("are you sure?")) {
+      userKit.deleteCustomer(customerId);
+      history.push("/home");
+    }
+  }
+
   return (
     <div>
+      <button onClick={deleteCustomer}>Delete customer</button>
       <h2>Customer Detail Page</h2>
       <p>Name: {customerData.name}</p>
       <p>organistationNr: {customerData.organisationNr}</p>
