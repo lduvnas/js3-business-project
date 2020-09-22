@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 /* import slugify from "slugify"; */
 import UserKit from "../data/UserKit";
+import { CustomerListContext } from "../contexts/CustomerListContext";
 import styled from "styled-components";
 
 const Div = styled.div`
@@ -12,8 +13,8 @@ const Div = styled.div`
 `;
 
 export default function GetCustomers() {
+  const { customerList, setCustomerList } = useContext(CustomerListContext);
   const userKit = new UserKit();
-  const [customerList, setCustomerList] = useState(null);
 
   function getCustomerList() {
     userKit

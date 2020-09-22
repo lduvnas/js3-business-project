@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Switch, Route } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
@@ -7,6 +7,7 @@ import styled from "styled-components";
 import "./App.css";
 import ConfirmPage from "./pages/ConfirmPage";
 import CustomerDetailPage from "./pages/CustomerDetailPage";
+import { CustomerListContext } from "./contexts/CustomerListContext";
 import { GlobalStyles } from "./styles/GlobalStyles";
 
 const Title = styled.h1`
@@ -15,26 +16,29 @@ const Title = styled.h1`
 `;
 
 function App() {
+  const [customerList, setCustomerList] = useState(null);
   return (
     <div>
       <GlobalStyles></GlobalStyles>
       <Title>Business Project</Title>
-      <Switch>
-        <Route path="/customers/:id" component={CustomerDetailPage} />
+      <CustomerListContext.Provider value={{ customerList, setCustomerList }}>
+        <Switch>
+          <Route path="/customers/:id" component={CustomerDetailPage} />
 
-        <Route path="/home">
-          <HomePage />
-        </Route>
-        <Route path="/login">
-          <LoginPage />
-        </Route>
-        <Route path="/confirm">
-          <ConfirmPage />
-        </Route>
-        <Route path="/">
-          <RegisterPage />
-        </Route>
-      </Switch>
+          <Route path="/home">
+            <HomePage />
+          </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
+          <Route path="/confirm">
+            <ConfirmPage />
+          </Route>
+          <Route path="/">
+            <RegisterPage />
+          </Route>
+        </Switch>
+      </CustomerListContext.Provider>
     </div>
   );
 }

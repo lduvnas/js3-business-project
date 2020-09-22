@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import UserKit from "../data/UserKit";
 import styled from "styled-components";
+import { CustomerListContext } from "../contexts/CustomerListContext";
 
 const Input = styled.input`
   width: 100%;
@@ -36,18 +37,35 @@ export default function CreateCustomerForm() {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   const userKit = new UserKit();
+  const { setCustomerList } = useContext(CustomerListContext);
 
   function handleCreateCustomer() {
-    userKit.createCustomar(
-      name,
-      organisationNr,
-      vatNr,
-      reference,
-      paymentTerm,
-      website,
-      email,
-      phoneNumber
-    );
+    userKit
+      .createCustomar(
+        name,
+        organisationNr,
+        vatNr,
+        reference,
+        paymentTerm,
+        website,
+        email,
+        phoneNumber
+      )
+      .then(() => {
+        userKit
+          .getCustomerList()
+          .then(res => res.json())
+          .then(data => setCustomerList(data.results));
+      });
+
+    setName("");
+    setOrganisationNr("");
+    setVatNr("");
+    setReference("");
+    setPaymentTerm("");
+    setWebsite("");
+    setEmail("");
+    setPhoneNumber("");
   }
 
   function renderInput(index, placeholder, stateVarible, stateSetVarible) {
