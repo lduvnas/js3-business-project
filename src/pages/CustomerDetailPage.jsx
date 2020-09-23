@@ -3,6 +3,7 @@ import UserKit from "../data/UserKit";
 import { useHistory, Link } from "react-router-dom";
 import Button from "../components/Button";
 import styled from "styled-components";
+import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
 
 const CustomerDetailGrid = styled.div`
   display: grid;
@@ -41,7 +42,10 @@ export default function CustomerDetailPage(props) {
 
   return (
     <div className="container">
-      <Link to={`/home`}>Back to home page</Link>
+      <Link to={`/home`}>
+        <AiOutlineArrowLeft />
+        Back to home page
+      </Link>
 
       <h2>{customerData.name}</h2>
       <CustomerDetailGrid>
@@ -71,7 +75,8 @@ export default function CustomerDetailPage(props) {
           <h6>PhoneNumber:</h6> <p>{customerData.phoneNumber}</p>
         </div>
       </CustomerDetailGrid>
-      <Button onClick={deleteCustomer} title="Delete customer" />
+      <AiOutlineDelete />
+      <Button onClick={deleteCustomer} title={"Delete customer"} />
     </div>
   );
 }

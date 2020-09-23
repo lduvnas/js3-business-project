@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserKit from "../data/UserKit";
+import { AiOutlineUser } from "react-icons/ai";
 
 export default function ActiveUser() {
   const userKit = new UserKit();
@@ -24,6 +25,7 @@ export default function ActiveUser() {
       <h5>User:</h5>
       <p>{user.firstName + " " + user.lastName}</p>
       <p>{user.email}</p>
+      <AiOutlineUser />
     </div>
   );
 }
