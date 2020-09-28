@@ -2,26 +2,23 @@ import React from "react";
 import CreateCustomerForm from "../components/CreateCustomerForm";
 import CustomerList from "../components/CustomerList";
 import Navbar from "../components/Navbar";
-/* import SideBar from "../components/SideBar"; */
 import styled from "styled-components";
+import Container from "../styles/Container";
+import FlexContainer from "../styles/FlexContainer";
 
-const FlexContainer = styled.div`
-  display: flex;
+const HomePageContainer = styled(FlexContainer)`
   flex-direction: column;
-  align-items: center;
 `;
 
 export default function HomePage() {
   return (
-    <FlexContainer>
+    <HomePageContainer>
       <Navbar />
-      {/*      <SideBar /> */}
-
-      <div className="container">
+      <Container>
         <CustomerList />
 
         <CreateCustomerForm />
-      </div>
-    </FlexContainer>
+      </Container>
+    </HomePageContainer>
   );
 }

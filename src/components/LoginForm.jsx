@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserKit from "../data/UserKit";
-import Button from "../components/Button";
+import Button from "../styles/Button";
+import Container from "../styles/Container";
 
 export default function LoginForm() {
   const [loginEmail, setLoginEmail] = useState("");
@@ -42,12 +43,12 @@ export default function LoginForm() {
   return (
     <div>
       {uid && token ? (
-        <div className="container">
+        <Container>
           <h2>Active Account</h2>
-          <Button onClick={handleActivateUser} title="Activate User" />
-        </div>
+          <Button onClick={handleActivateUser}>Activate User"</Button>
+        </Container>
       ) : (
-        <div className="container">
+        <Container>
           <h2>Login</h2>
           <input
             placeholder="Email"
@@ -60,8 +61,8 @@ export default function LoginForm() {
             value={loginPassword}
             onChange={e => setLoginPassword(e.target.value)}
           />
-          <Button onClick={handleLogin} title="Login" />
-        </div>
+          <Button onClick={handleLogin}>Login</Button>
+        </Container>
       )}
     </div>
   );

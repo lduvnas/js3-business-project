@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 import UserKit from "../data/UserKit";
-import Button from "./Button";
+import Button from "../styles/Button";
+import Container from "../styles/Container";
 
 export default function RegisterForm() {
   const [firstName, setFirstName] = useState("");
@@ -47,17 +48,17 @@ export default function RegisterForm() {
     ["Organistion Kind (0,1,2)", organisationKind, setOrganisationKind]
   ];
   return (
-    <div className="container">
+    <Container>
       <h2>Register</h2>
       <p>Enter details to register</p>
 
       {inputObjects.map((inputItem, index) => {
         return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);
       })}
-      <Button onClick={handleRegister} title="Register" />
+      <Button onClick={handleRegister}>Register</Button>
       <p>
         Already have an account? Press <Link to={`/login`}>here</Link>
       </p>
-    </div>
+    </Container>
   );
 }

@@ -2,10 +2,9 @@ import React, { useState, useEffect } from "react";
 import UserKit from "../data/UserKit";
 import { AiOutlineUser } from "react-icons/ai";
 import styled from "styled-components";
+import FlexContainer from "../styles/FlexContainer";
 
-const FlexContainer = styled.div`
-  display: flex;
-  align-items: center;
+const UserContainer = styled(FlexContainer)`
   justify-content: space-between;
   min-width: 190px;
 `;
@@ -29,12 +28,12 @@ export default function ActiveUser() {
   }, []);
 
   return (
-    <FlexContainer>
+    <UserContainer>
       <AiOutlineUser size={24} />
       <div>
         <p>{user.firstName + " " + user.lastName}</p>
         <p>{user.email}</p>
       </div>
-    </FlexContainer>
+    </UserContainer>
   );
 }

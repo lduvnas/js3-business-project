@@ -5,7 +5,13 @@ import UserKit from "../data/UserKit";
 import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
 import Navbar from "../components/Navbar";
 import CustomerDetailItem from "../components/CustomerDetailItem";
+import Container from "../styles/Container";
+import Button from "../styles/Button";
+import FlexContainer from "../styles/FlexContainer";
 
+const CustomerFlexContainer = styled(FlexContainer)`
+  flex-direction: column;
+`;
 const CustomerDetailGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -18,22 +24,11 @@ const LinkContainer = styled.a`
   align-items: center;
 `;
 
-const FlexContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ButtonWarning = styled.button`
-  width: 170px;
-  padding: 12px 20px;
-  margin: 3em 0em;
-  border-radius: 5px;
-  border: none;
+const ButtonWarning = styled(Button)`
+  margin-top: 3em;
   background-color: #ed4b4b;
-  color: white;
   &:hover {
-    background-color: #c23d3d;
+    background-color: #c43e3e;
   }
 `;
 
@@ -66,9 +61,9 @@ export default function CustomerDetailPage(props) {
   }
 
   return (
-    <FlexContainer>
+    <CustomerFlexContainer>
       <Navbar />
-      <div className="container">
+      <Container>
         <Link to={`/home`}>
           <LinkContainer>
             <AiOutlineArrowLeft />
@@ -102,7 +97,7 @@ export default function CustomerDetailPage(props) {
           Delete customer
           <AiOutlineDelete />
         </ButtonWarning>
-      </div>
-    </FlexContainer>
+      </Container>
+    </CustomerFlexContainer>
   );
 }

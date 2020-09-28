@@ -5,7 +5,7 @@ import { yupResolver } from "@hookform/resolvers";
 import * as yup from "yup";
 import { CustomerListContext } from "../contexts/CustomerListContext";
 import UserKit from "../data/UserKit";
-import Button from "./Button";
+import Button from "../styles/Button";
 
 const ErrorMessage = styled.p`
   color: #ed4b4b;
@@ -117,7 +117,7 @@ export default function CreateCustomerFrom() {
           <input type="text" name="phoneNumber" ref={register} />
           {errors.phoneNumber && <ErrorMessage>Required</ErrorMessage>}
         </label>
-        <Button type="submit" title="Create customer" />
+        <Button type="submit">Create customer</Button>
       </form>
     </div>
   );
