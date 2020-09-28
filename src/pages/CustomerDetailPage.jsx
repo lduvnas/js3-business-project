@@ -54,7 +54,11 @@ export default function CustomerDetailPage(props) {
   }, []);
 
   function deleteCustomer() {
-    if (window.confirm("Are you sure?")) {
+    if (
+      window.confirm(
+        "Are you sure you want to permanently delete this customer?"
+      )
+    ) {
       userKit.deleteCustomer(customerId);
       history.push("/home");
     }
@@ -75,7 +79,7 @@ export default function CustomerDetailPage(props) {
           <CustomerDetailItem title="Name:" content={customerData.name} />
           <CustomerDetailItem
             title="organistationNr:"
-            ßcontent={customerData.organisationNr}
+            content={customerData.organisationNr}
           />
           <CustomerDetailItem title="vatNr:" content={customerData.vatNr} />
           <CustomerDetailItem

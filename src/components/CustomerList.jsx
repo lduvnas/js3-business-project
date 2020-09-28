@@ -48,7 +48,7 @@ export default function GetCustomers() {
             );
           })
         ) : (
-          <p>You don't have any customers yet</p>
+          <p>You don't have any customers</p>
         )}
       </CustomerGrid>
     </div>
