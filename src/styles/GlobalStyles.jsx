@@ -10,18 +10,19 @@ body {
   background: whitesmoke;
   color: #555;
 
+
 }
 
 h3 ,h2, h6{
  margin-top:1.5em;
 }
 
-p {
+p , label{
   font-size:0.7em;
 }
 
 a{
-  font-size:0.7em;
+  font-size:0.7rem;
   text-decoration: none;
   color: #67a4d9;
 }
