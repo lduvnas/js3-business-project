@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import ActiveUser from "../components/ActiveUser";
 const AdminNavbar = styled.nav`
-  width: 100wv;
+  width: 100%;
   height: 70px;
   top: 0;
   background-color: #687a89;
@@ -11,6 +11,7 @@ const AdminNavbar = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 2em;
 `;
 const Title = styled.h1`
   font-size: 1.5em;
