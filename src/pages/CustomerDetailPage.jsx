@@ -3,7 +3,6 @@ import { useHistory, Link } from "react-router-dom";
 import styled from "styled-components";
 import UserKit from "../data/UserKit";
 import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
-import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import CustomerDetailItem from "../components/CustomerDetailItem";
 
@@ -23,6 +22,19 @@ const FlexContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+`;
+
+const ButtonWarning = styled.button`
+  width: 170px;
+  padding: 12px 20px;
+  margin: 3em 0em;
+  border-radius: 5px;
+  border: none;
+  background-color: #ed4b4b;
+  color: white;
+  &:hover {
+    background-color: #c23d3d;
+  }
 `;
 
 export default function CustomerDetailPage(props) {
@@ -63,7 +75,6 @@ export default function CustomerDetailPage(props) {
             Back to home page
           </LinkContainer>
         </Link>
-
         <h2>{customerData.name}</h2>
         <CustomerDetailGrid>
           <CustomerDetailItem title="Name:" content={customerData.name} />
@@ -87,8 +98,10 @@ export default function CustomerDetailPage(props) {
             content={customerData.phoneNumber}
           />
         </CustomerDetailGrid>
-        <AiOutlineDelete />
-        <Button onClick={deleteCustomer} title={"Delete customer"} />
+        <ButtonWarning onClick={deleteCustomer}>
+          Delete customer
+          <AiOutlineDelete />
+        </ButtonWarning>
       </div>
     </FlexContainer>
   );
