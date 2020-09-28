@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { useForm } from "react-hook-form";
-import { CustomerListContext } from "../contexts/CustomerListContext";
 import styled from "styled-components";
-import UserKit from "../data/UserKit";
+import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers";
 import * as yup from "yup";
+import { CustomerListContext } from "../contexts/CustomerListContext";
+import UserKit from "../data/UserKit";
 import Button from "./Button";
 
 const ErrorMessage = styled.p`
@@ -62,36 +62,10 @@ export default function CreateCustomerFrom() {
     e.target.reset();
   };
 
-  /*   function renderInput(index, placeholder, name, errorMsg) {
-    return (
-      <div key={index}>
-        <label>
-          {name}
-          <input placeholder={placeholder} name={name} ref={register} />
-          {errors.name && <ErrorMessage>{errorMsg}</ErrorMessage>}
-        </label>
-      </div>
-    );
-  }
-  const inputObjects = [
-    ["name", "name", "requird"],
-    ["organisationNr", "organisationNr", "requird"],
-    ["vatNr", "vatNr", "Required and should be like SE1234567890"],
-    ["reference", "reference", "requird"],
-    ["paymentTerm", "paymentTerm", "requird"],
-    ["website", "website", "requird"],
-    ["Email", "email", "requird"],
-    ["Phone", "phone", "requird"]
-  ]; */
-
   return (
     <div>
       <h3>Create new Customer</h3>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/*     {inputObjects.map((inputItem, index) => {
-          return renderInput(index, inputItem[0], inputItem[1], inputItem[2]);
-        })} */}
-
         <label>
           Name
           <input type="text" name="name" ref={register} />

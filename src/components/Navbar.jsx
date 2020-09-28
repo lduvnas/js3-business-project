@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import ActiveUser from "../components/ActiveUser";
+
 const AdminNavbar = styled.nav`
   width: 100%;
   height: 70px;

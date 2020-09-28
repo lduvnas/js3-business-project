@@ -9,8 +9,6 @@ export const GlobalStyles = createGlobalStyle`
 body {
   background: whitesmoke;
   color: #555;
-
-
 }
 
 h3 ,h2, h6{
@@ -39,13 +37,6 @@ input{
   border: none;
   background-color: #f1f1f1;
   color: black;
-}
-
-.App{
-  display: flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
 }
 
 .container{
