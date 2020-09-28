@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import UserKit from "../data/UserKit";
 import { useHistory, Link } from "react-router-dom";
-import Button from "../components/Button";
 import styled from "styled-components";
+import UserKit from "../data/UserKit";
 import { AiOutlineArrowLeft, AiOutlineDelete } from "react-icons/ai";
+import Button from "../components/Button";
 import Navbar from "../components/Navbar";
+import CustomerDetailItem from "../components/CustomerDetailItem";
 
 const CustomerDetailGrid = styled.div`
   display: grid;
@@ -65,31 +66,26 @@ export default function CustomerDetailPage(props) {
 
         <h2>{customerData.name}</h2>
         <CustomerDetailGrid>
-          <div>
-            <h6>Name:</h6> <p> {customerData.name}</p>
-          </div>
-
-          <div>
-            <h6>organistationNr:</h6> <p> {customerData.organisationNr}</p>
-          </div>
-          <div>
-            <h6>vatNr:</h6> <p>{customerData.vatNr}</p>
-          </div>
-          <div>
-            <h6>Reference:</h6> <p> {customerData.reference}</p>
-          </div>
-          <div>
-            <h6>PaymentTerm:</h6> <p>{customerData.paymentTerm}</p>
-          </div>
-          <div>
-            <h6>Website:</h6> <p>{customerData.website}</p>
-          </div>
-          <div>
-            <h6>Email: </h6> <p>{customerData.email}</p>
-          </div>
-          <div>
-            <h6>PhoneNumber:</h6> <p>{customerData.phoneNumber}</p>
-          </div>
+          <CustomerDetailItem title="Name:" content={customerData.name} />
+          <CustomerDetailItem
+            title="organistationNr:"
+            ßcontent={customerData.organisationNr}
+          />
+          <CustomerDetailItem title="vatNr:" content={customerData.vatNr} />
+          <CustomerDetailItem
+            title="Reference:"
+            content={customerData.reference}
+          />
+          <CustomerDetailItem
+            title="PaymentTerm:"
+            content={customerData.paymentTerm}
+          />
+          <CustomerDetailItem title="Website:" content={customerData.website} />
+          <CustomerDetailItem title="Email:" content={customerData.email} />
+          <CustomerDetailItem
+            title="PhoneNumber:"
+            content={customerData.phoneNumber}
+          />
         </CustomerDetailGrid>
         <AiOutlineDelete />
         <Button onClick={deleteCustomer} title={"Delete customer"} />
