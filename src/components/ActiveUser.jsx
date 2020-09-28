@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import UserKit from "../data/UserKit";
-/* import { AiOutlineUser } from "react-icons/ai"; */
-import { FaRegUserCircle } from "react-icons/fa";
+import { AiOutlineUser } from "react-icons/ai";
 import styled from "styled-components";
 
 const FlexContainer = styled.div`
@@ -31,8 +30,7 @@ export default function ActiveUser() {
 
   return (
     <FlexContainer>
-      <FaRegUserCircle size={24} />
-      {/*  <AiOutlineUser size={24} /> */}
+      <AiOutlineUser size={24} />
       <div>
         <p>{user.firstName + " " + user.lastName}</p>
         <p>{user.email}</p>
