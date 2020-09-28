@@ -1,8 +1,14 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import UserKit from "../data/UserKit";
+import styled from "styled-components";
 import Button from "../styles/Button";
 import Container from "../styles/Container";
+import FlexContainer from "../styles/FlexContainer";
+
+const ActivateContainer = styled(FlexContainer)`
+  flex-direction: column;
+`;
 
 export default function LoginForm() {
   const [loginEmail, setLoginEmail] = useState("");
@@ -44,8 +50,10 @@ export default function LoginForm() {
     <div>
       {uid && token ? (
         <Container>
-          <h2>Active Account</h2>
-          <Button onClick={handleActivateUser}>Activate User"</Button>
+          <ActivateContainer>
+            <h2>Active Account</h2>
+            <Button onClick={handleActivateUser}>Activate User</Button>
+          </ActivateContainer>
         </Container>
       ) : (
         <Container>
