@@ -68,15 +68,7 @@ export default class {
     });
   }
 
-  async deleteCustomer(id) {
-    const url = `${ROOT_URL}api/v1/customers/${id}/`;
-    return fetch(url, {
-      method: "DELETE",
-      headers: this.getPrivateHeaders()
-    });
-  }
-
-  async createCustomar(
+  /*   async createCustomar(
     name,
     organisationNr,
     vatNr,
@@ -97,11 +89,21 @@ export default class {
       email,
       phoneNumber
     };
-
+ */
+  async createCustomar(payload) {
+    const url = `${ROOT_URL}api/v1/customers`;
     return fetch(url, {
       method: "POST",
       headers: this.getPrivateHeaders(),
       body: JSON.stringify(payload)
+    });
+  }
+
+  async deleteCustomer(id) {
+    const url = `${ROOT_URL}api/v1/customers/${id}/`;
+    return fetch(url, {
+      method: "DELETE",
+      headers: this.getPrivateHeaders()
     });
   }
 
