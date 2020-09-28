@@ -15,7 +15,7 @@ export default function GetCustomers() {
   const { customerList, setCustomerList } = useContext(CustomerListContext);
   const userKit = new UserKit();
 
-  function getCustomerList() {
+  function fetchCustomerList() {
     userKit
       .getCustomerList()
       .then(res => res.json())
@@ -25,7 +25,7 @@ export default function GetCustomers() {
   }
 
   useEffect(() => {
-    getCustomerList();
+    fetchCustomerList();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -34,7 +34,8 @@ export default function GetCustomers() {
       <h3>Your Customers</h3>
 
       <CustomerGrid>
-        {customerList &&
+        {}
+        {customerList && customerList.length ? (
           customerList.map(customer => {
             const id = customer.id;
             return (
@@ -45,7 +46,10 @@ export default function GetCustomers() {
                 <p>id: {customer.id}</p>
               </div>
             );
-          })}
+          })
+        ) : (
+          <p>You don't have any customers yet</p>
+        )}
       </CustomerGrid>
     </div>
   );
