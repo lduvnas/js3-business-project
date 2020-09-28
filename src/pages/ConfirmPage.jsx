@@ -1,5 +1,5 @@
 import React from "react";
-import EmailImage from "../paper-plane.png";
+import EmailImage from "../media/paper-plane.png";
 
 export default function ConfirmPage() {
   return (
